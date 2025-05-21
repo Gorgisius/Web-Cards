@@ -2,6 +2,10 @@
     --white: #fff;
     --background: rgb(10,10,10);
     --hover: rgb(190, 18, 60);
+    --card_background: rgb(30,30,30);
+    --card_border: rgb(80, 0, 0);
+    --card_text: rgb(180, 180, 180);
+    --card_hover: rgb(50, 0 ,0);
 }
 
 body{
@@ -20,7 +24,8 @@ nav {
 }
 
 nav p{
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin: 0;
 }
 
 nav ul {
@@ -28,7 +33,7 @@ nav ul {
     list-style: none;
     display: flex;
     width: 50%;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 nav ul li {
@@ -37,6 +42,7 @@ nav ul li {
 }
 
 nav ul li a{
+    font-size: 1.2rem;
     text-decoration: none;
     color: inherit;
 }
@@ -59,33 +65,57 @@ main h1 {
 }
 
 .grid {
-    display: grid;
-    width: 100%;
-    grid-auto-rows: 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 40px 20px; */
+    /* grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* justify-items: center; */
 }
 
 .card {
-    border: 1px solid white;
+    /* border: 2px solid white; */
+    background-color: var(--card_background);
+    box-shadow: 0 0 10px var(--hover);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    height: fit-content;
+    margin: 20px;
 }
 
-.image{
-    height: 50%;
-    /* height: 60%; */
+.card:hover {
+    background-color: var(--card_hover);
 }
+
+/* .image{
+    height: 300px;
+    margin-top: 20px;
+    /* height: 60%; */
 .card img {
-    width: 100%;
-    height: 100%;
+    align-self: center;
+    height: 350px;
+    width: auto;
     object-fit: contain;
+    margin-top: 20px;
+    border-radius: 10px;
+    /* width: 100%;
+    height: 100%;
+    object-fit: contain; */
 }
 
 .text {
+    font-family: 'AncizarSeriff';
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.text p{
+    margin: .5rem;
 }
