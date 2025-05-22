@@ -1,11 +1,26 @@
 :root{
     --white: #fff;
     --background: rgb(10,10,10);
+    --altbackground: rgb(20,20,20);
     --hover: rgb(190, 18, 60);
     --card_background: rgb(30,30,30);
     --card_border: rgb(80, 0, 0);
     --card_text: rgb(180, 180, 180);
     --card_hover: rgb(50, 0 ,0);
+}
+
+.card_text{
+    color: var(--card_text);
+}
+
+.justify{
+    text-align: justify;
+}
+.center{
+    text-align: center;
+}
+.card_title{
+    font-size: 1.5rem;
 }
 
 body{
@@ -16,11 +31,14 @@ body{
 }
 
 nav {
+    background-color: var(--altbackground);
+    position: sticky;
+    top: 0;
     font-family: MedievalSharp;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.8)
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.8)
 }
 
 nav p{
@@ -34,6 +52,7 @@ nav ul {
     display: flex;
     width: 50%;
     justify-content: space-evenly;
+    padding: 0;
 }
 
 nav ul li {
@@ -64,21 +83,17 @@ main h1 {
     align-self: center;
 }
 
-.grid {
+.flex-container {
     display: flex;
-    width: 80%;
+    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    /* gap: 40px 20px; */
-    /* grid-auto-rows: 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    /* justify-items: center; */
 }
 
 .card {
     /* border: 2px solid white; */
     background-color: var(--card_background);
-    box-shadow: 0 0 10px var(--hover);
+    border: 2px solid var(--card_border);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
@@ -87,22 +102,26 @@ main h1 {
     max-width: 300px;
     height: fit-content;
     margin: 20px;
+    background: linear-gradient(135deg, 
+  rgb(10, 5, 5), 
+  rgb(30, 15, 15), 
+  rgb(50, 20, 20), 
+  rgb(20, 10, 10), 
+  rgb(5, 0, 0)
+);
+
 }
 
 .card:hover {
-    background-color: var(--card_hover);
+    background: linear-gradient(to left, var(--hover), var(--card_hover));
 }
 
-/* .image{
-    height: 300px;
-    margin-top: 20px;
-    /* height: 60%; */
 .card img {
     align-self: center;
-    height: 350px;
-    width: auto;
-    object-fit: contain;
-    margin-top: 20px;
+    height: 200px;
+    width: 250px;
+    object-fit: cover;
+    margin: 15px 0;
     border-radius: 10px;
     /* width: 100%;
     height: 100%;
@@ -116,6 +135,36 @@ main h1 {
     align-items: center;
 }
 
+.text h2{
+    margin: 0;
+}
+
 .text p{
     margin: .5rem;
+    font-size: 1.1rem;
+}
+
+footer{
+    margin-top: 10px;
+    background-color: var(--altbackground);
+    display: flex;
+    justify-content: center;
+}
+
+footer p{
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 1rem;
+}
+
+@media (max-width: 767px) {
+    nav{
+        justify-content: space-between;
+    }
+    nav p {
+        display: none;
+    }
+    nav ul{
+        width: 100%;
+    }
 }
